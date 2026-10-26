@@ -197,6 +197,3 @@ git branch -d name
 ---
 
 Happy committing! Use your powers for good commits.
-
-
-<h1> hiii how r u </h1>
