@@ -1,6 +1,6 @@
 # Git & GitHub Workshop: Commands Cheat Sheet
 
-*Or: how to stop naming files `final_v7_REAL_this_one.docx`*
+_Or: how to stop naming files `final_v7_REAL_this_one.docx`_
 
 Speaker: **Saraansh Gandhi**
 
@@ -12,13 +12,13 @@ Speaker: **Saraansh Gandhi**
 
 ## 1. Git vs GitHub
 
-| | Git | GitHub |
-|---|---|---|
-| What is it? | A tool installed on **your laptop** | A **website** that hosts Git projects |
-| What does it do? | Tracks every change to your files | Stores, shares and lets you collaborate |
-| Needs internet? | No, works offline | Yes |
-| Made by | Linus Torvalds (2005) | Launched 2008, owned by Microsoft since 2018 |
-| Analogy | Git = the camera | GitHub = Instagram |
+|                  | Git                                 | GitHub                                       |
+| ---------------- | ----------------------------------- | -------------------------------------------- |
+| What is it?      | A tool installed on **your laptop** | A **website** that hosts Git projects        |
+| What does it do? | Tracks every change to your files   | Stores, shares and lets you collaborate      |
+| Needs internet?  | No, works offline                   | Yes                                          |
+| Made by          | Linus Torvalds (2005)               | Launched 2008, owned by Microsoft since 2018 |
+| Analogy          | Git = the camera                    | GitHub = Instagram                           |
 
 ---
 
@@ -39,41 +39,41 @@ Speaker: **Saraansh Gandhi**
 
 ### Step 0: Setup (do this once per laptop)
 
-| Command | What it does |
-|---|---|
-| `git --version` | Checks that Git is installed |
-| `git config --global user.name "Your Name"` | Tells Git who you are (your name appears on commits) |
+| Command                                         | What it does                                             |
+| ----------------------------------------------- | -------------------------------------------------------- |
+| `git --version`                                 | Checks that Git is installed                             |
+| `git config --global user.name "Your Name"`     | Tells Git who you are (your name appears on commits)     |
 | `git config --global user.email "you@mail.com"` | Sets your email. Use the same one as your GitHub account |
-| `git config --list` | Shows all your current Git settings |
-| `git config --global init.defaultBranch main` | Makes new repos start with a branch called `main` |
+| `git config --list`                             | Shows all your current Git settings                      |
+| `git config --global init.defaultBranch main`   | Makes new repos start with a branch called `main`        |
 
 `--global` means the setting applies to every project on this laptop.
 
 ### Step 1: Create a repository
 
-| Command | What it does |
-|---|---|
-| `mkdir my-first-repo` | Creates a new folder |
-| `cd my-first-repo` | Moves into that folder |
-| `git init` | Turns the folder into a Git repo by creating a hidden `.git` folder (the brain of your project) |
+| Command               | What it does                                                                                    |
+| --------------------- | ----------------------------------------------------------------------------------------------- |
+| `mkdir my-first-repo` | Creates a new folder                                                                            |
+| `cd my-first-repo`    | Moves into that folder                                                                          |
+| `git init`            | Turns the folder into a Git repo by creating a hidden `.git` folder (the brain of your project) |
 
 Run `git init` **once per project**. If you delete the `.git` folder, the project loses all its history.
 
 ### Step 2: Stage your changes
 
-| Command | What it does |
-|---|---|
-| `git status` | Shows what changed. Red = untracked/unstaged, green = staged |
-| `git add index.html` | Stages one file |
-| `git add images/` | Stages a whole folder |
-| `git add .` | Stages everything in the current folder. Check for passwords and `.env` files first! |
+| Command              | What it does                                                                         |
+| -------------------- | ------------------------------------------------------------------------------------ |
+| `git status`         | Shows what changed. Red = untracked/unstaged, green = staged                         |
+| `git add index.html` | Stages one file                                                                      |
+| `git add images/`    | Stages a whole folder                                                                |
+| `git add .`          | Stages everything in the current folder. Check for passwords and `.env` files first! |
 
 ### Step 3: Commit (save a snapshot)
 
-| Command | What it does |
-|---|---|
+| Command                        | What it does                                          |
+| ------------------------------ | ----------------------------------------------------- |
 | `git commit -m "Add homepage"` | Saves the staged changes as a snapshot with a message |
-| `git log --oneline` | Shows your commit history, one line per commit |
+| `git log --oneline`            | Shows your commit history, one line per commit        |
 
 Good commit messages complete the sentence "This commit will...":
 
@@ -84,11 +84,11 @@ Good commit messages complete the sentence "This commit will...":
 
 First create an **empty** repository on github.com (no README, no license) and copy its URL.
 
-| Command | What it does |
-|---|---|
-| `git remote add origin https://github.com/you/my-first-repo.git` | Connects your local repo to GitHub. `origin` is just a nickname for the URL |
-| `git branch -M main` | Renames your current branch to `main` |
-| `git push -u origin main` | Uploads your commits to GitHub. `-u` remembers the link, so next time `git push` is enough |
+| Command                                                          | What it does                                                                               |
+| ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| `git remote add origin https://github.com/you/my-first-repo.git` | Connects your local repo to GitHub. `origin` is just a nickname for the URL                |
+| `git branch -M main`                                             | Renames your current branch to `main`                                                      |
+| `git push -u origin main`                                        | Uploads your commits to GitHub. `-u` remembers the link, so next time `git push` is enough |
 
 If Git asks you to log in, use the browser login or a Personal Access Token, not your GitHub password.
 
@@ -120,17 +120,17 @@ Main stays safe while you experiment, then you merge when it works.
 
 ### Branch commands
 
-| Command | What it does |
-|---|---|
-| `git branch` | Lists all branches (the current one has a `*`) |
-| `git branch new-idea` | Creates a branch called `new-idea` |
-| `git switch new-idea` | Moves you onto that branch |
-| `git switch -c new-idea` | Creates the branch **and** moves you onto it |
-| `git checkout -b new-idea` | Older way of doing the same as `switch -c` |
-| `git push -u origin new-idea` | Uploads the branch to GitHub |
-| `git switch main` | Goes back to `main` |
-| `git merge new-idea` | Combines `new-idea` into the branch you are on (run it from `main`) |
-| `git branch -d new-idea` | Deletes the branch after it has been merged |
+| Command                       | What it does                                                        |
+| ----------------------------- | ------------------------------------------------------------------- |
+| `git branch`                  | Lists all branches (the current one has a `*`)                      |
+| `git branch new-idea`         | Creates a branch called `new-idea`                                  |
+| `git switch new-idea`         | Moves you onto that branch                                          |
+| `git switch -c new-idea`      | Creates the branch **and** moves you onto it                        |
+| `git checkout -b new-idea`    | Older way of doing the same as `switch -c`                          |
+| `git push -u origin new-idea` | Uploads the branch to GitHub                                        |
+| `git switch main`             | Goes back to `main`                                                 |
+| `git merge new-idea`          | Combines `new-idea` into the branch you are on (run it from `main`) |
+| `git branch -d new-idea`      | Deletes the branch after it has been merged                         |
 
 Magic trick: make a new file on a branch, switch to `main` and watch it disappear. Switch back and it returns.
 
@@ -186,13 +186,13 @@ git branch -d name
 
 ## 8. Common Problems
 
-| Problem | Likely fix |
-|---|---|
-| `nothing to commit` | You forgot `git add`, or nothing changed |
-| `remote origin already exists` | You already added it. Check with `git remote -v` |
+| Problem                        | Likely fix                                                |
+| ------------------------------ | --------------------------------------------------------- |
+| `nothing to commit`            | You forgot `git add`, or nothing changed                  |
+| `remote origin already exists` | You already added it. Check with `git remote -v`          |
 | `failed to push` / login error | Log in through the browser or use a Personal Access Token |
-| `fatal: not a git repository` | You are in the wrong folder, or forgot `git init` |
-| Wrong remote URL | Fix it with `git remote set-url origin <correct-url>` |
+| `fatal: not a git repository`  | You are in the wrong folder, or forgot `git init`         |
+| Wrong remote URL               | Fix it with `git remote set-url origin <correct-url>`     |
 
 ---
 
